@@ -42,6 +42,10 @@ const Home = () => {
       nav.navigate('Search',{ query: searchquery });
     }
 
+    const handletrending=()=>{
+      nav.navigate('Search',{ query: searchquery });
+    }
+
   return (
     <animate.View animation={"slideInRight"} style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="red" />
@@ -76,8 +80,9 @@ const Home = () => {
           horizontal
           data={data2}
           showsHorizontalScrollIndicator={false}
+          keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handletrending}>
               <View style={styles.itemContainer2}>
                 <Text>{item.title}</Text>
               </View>
